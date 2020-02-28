@@ -89,8 +89,8 @@
 
 @media (max-width: 575px) {
 	.header {
-		padding-top: 15px;
-		padding-bottom: 18px;
+		padding-top: 5px;
+		padding-bottom: 10px;
 	}
 }
 
@@ -336,6 +336,8 @@ a.contacts-item:hover {
 	@media (max-width: 767px) {
 		.main-content-title-group {
 			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.main-content {
@@ -646,8 +648,19 @@ a.contacts-item:hover {
 }
 
 @media (max-width: 991px) {
+	.header-main .main-content-col--img {
+		// display: none;
+		position: absolute;
+		top: 40px;
+		right: 0;
+		width: 40%;
+	}
+}
+
+@media (max-width: 767px) {
 	.main-content-col--img {
 		display: none;
+
 	}
 }
 
@@ -663,6 +676,26 @@ a.contacts-item:hover {
 	max-width: 290px;
 	-webkit-box-shadow: 0px 10px 21px 0px rgba(159, 19, 0, 0.26);
 	box-shadow: 0px 10px 21px 0px rgba(159, 19, 0, 0.26);
+}
+
+.mobile-header-img {
+	display: none;
+	overflow: hidden;
+}
+
+@media(max-width:767px) {
+	.mobile-header-img {
+		background-color: #f2d102;
+		display: block;
+	}
+}
+
+.mobile-header-img .images-wrapper {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 @media (max-width: 991px) {
@@ -806,6 +839,7 @@ a.contacts-item:hover {
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
+
 
 .main-content-images-item:first-child {
 	-ms-flex-item-align: start;
