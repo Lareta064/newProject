@@ -1,0 +1,78 @@
+// modal-form
+#overlay
+	.modal-wrapper
+		button.modal-close
+			i.fas.fa-times
+		h2.modal-title Ваш телефон
+		form#form.modal-form
+			input(type="hidden" name="project_name" value="Бизнес Сайт 3.0")
+			input(type="hidden" name="admin_email" value="korolevremont@mail.ru")
+			input(type="hidden" name="form_subject" value="Внимание! Новая заявка")
+			.succes
+				span Спасибо за заявку!
+			.input-group
+				input.form-input.phone(type="tel" name="phone")
+			.form-button
+				input.page-button.page-button--form(name="send" type="submit" onsubmit="yaCounter57102613.reachGoal ('order', function () {alert ('Данные отправлены')}); return true;" value="Жду звонка")
+				p.politic-text
+					| Указывая данные, Вы соглашаетесь с условиями 
+					a.politic-link(href="#") Политики конфиденциальности
+
+.page-wrapper
+	header.header
+		.container
+			.header-wrapper
+				.header-company
+					a.header-company-logo(href="index.html")
+						.header-company-logo__icon
+							img(src="img/logo.png" ,="" alt="logo")
+						.header-company-logo__name
+							b
+								| Ваша
+								br
+								| Компания
+					.header-company-info
+						| Информация о
+						br
+						| предоставляемых услугах
+				.header-contacts
+					a.contacts-item.contacts-item--phone.d-flex(href="tel:88000000000")
+						i.fas.fa-phone-alt
+						.header-contacts-phone.contacts-phone 8 (800) 000-00-00
+					.contacts-item.d-flex.hidden-mobile
+						i.fas.fa-map-marker-alt  
+						.header-contacts-address.contacts-address Город, ул. Наименование, д.,0-00
+					a.header-contacts-info.hidden-mobile(target="_blank" href="https://yandex.ru/maps/213/moscow/search/%D0%B3.%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%20%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D1%8F%D0%BA%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%206%2C%20%D0%BE%D1%84.%20417/?ll=37.651358%2C55.846962&sll=38.089044%2C44.551462&sspn=0.020514%2C0.008577&z=16") Как добраться
+	.header-main
+		.container
+			.main-content.d-flex
+				.main-content-col.main-content-col--text
+					.main-content-title-group
+						h1.title-1
+							| Уникальное торговое предложение вашего товара или услуги
+						h3.subtitle Текст вашего подзаголовка  и другая важная информация.
+						button#open-modal.page-button Подробнее
+						p.basic-text Текст с призывом к действию под кнопкой
+							
+					.main-content-benefits-group
+						.benefits-group-item
+							p.benefits-text
+								b
+									u Экслкюзивно
+							p.benefits-text У Вас будет эксклюзивный дизайн, который Вы не встретите больше нигде
+							p.benefits-text
+						.benefits-group-item
+							p.benefits-text
+								b
+									u Полный цикл
+							p.benefits-text Если Вы еще не подобрали бригады - мы гарантированно поможем с этим вопросом
+							p.benefits-text
+				.main-content-col.main-content-col--img
+					.images-wrapper.d-flex
+						.main-content-images-item.images-item__left
+							img.image-left(src="https://static.tildacdn.com/tild3662-3363-4337-b739-623837356338/18075564986.jpg" alt="img")
+						.main-content-images-item.images-item__center
+							img.image-center(src="https://static.tildacdn.com/tild3662-3363-4337-b739-623837356338/18075564986.jpg" alt="img")
+						.main-content-images-item.images-item__right
+							img.image-right(src="https://static.tildacdn.com/tild3662-3363-4337-b739-623837356338/18075564986.jpg" alt="img")
+		.main-mobile-img
