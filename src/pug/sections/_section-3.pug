@@ -1,0 +1,20 @@
+mixin benefitsItem(iconName, title, text)
+	.benefits-item-inner
+		.benefits-item
+			.benefits-item__icon
+				img(src="../img/section3/"+ iconName+".png", alt="icon")
+			.benefits-item__title #{title}
+			.benefits-item__text !{text}
+
+section.benefits
+	.container
+		.block-head.text-center
+			h2.block-title Причины работать с нами
+			p.basic-text Подзаголовок блока преимуществ или другая важная информация.
+		.benefits-items
+			+benefitsItem('icon1', 'Заголовок', 'Расскажите посетителям сайта о своих сильных сторонах Расскажите посетителям сайта о своих сильных сторонах')
+			+benefitsItem('icon2', 'Заголовок', 'Расскажите посетителям сайта о своих сильных сторонах')
+			+benefitsItem('icon3', 'Заголовок', 'Расскажите посетителям сайта о своих сильных сторонах')
+			+benefitsItem('icon4', 'Заголовок', 'Расскажите посетителям сайта о своих сильных сторонах')
+			+benefitsItem('icon5', 'Заголовок', 'Расскажите посетителям сайта о своих сильных сторонах')
+			+benefitsItem('icon6', 'Заголовок', 'Расскажите посетителям сайта о своих сильных сторонах')
