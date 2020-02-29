@@ -1,0 +1,83 @@
+/*СЕКЦИЯ -4*/
+.partners {
+	height: 550px;
+	padding-top: 2.1em;
+	padding-bottom: 2.5em;
+	background-color: #f7de37;
+	background: url(../img/section4/partners.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-position: 30px 30%;
+	background-size: cover;
+	position: relative;
+	font-size: 32px;
+
+	.container {
+		position: relative;
+		z-index: 5;
+	}
+
+	.block-title {
+		margin-bottom: .8em;
+	}
+
+	.info-text {
+		margin-bottom: 18px;
+	}
+
+	.medium-text {
+		font-size: 1em;
+		line-height: 1;
+	}
+
+	p.animate-num {
+		font-size: 2.4em;
+		font-family: @boldText;
+		line-height: 1;
+	}
+
+	.basic-text {
+		margin-top: 1.85em;
+	}
+
+	button {
+		display: inline-block;
+
+	}
+
+	.page-button.page-button--light {
+		background-color: #fff;
+		box-shadow: 0px 5px 0px 0px #555;
+	}
+
+	.button-link {
+		border: 0px;
+		background-color: transparent;
+		border-bottom: 1px solid #000;
+		font-size: 24px;
+		margin-left: 25px;
+		height: 54px;
+	}
+}
+
+.partners:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(255, 204, 0, .5);
+	z-index: 2;
+}
+
+.partners:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 60%;
+	clip-path: polygon(0 0, 55% 0, 100% 100%, 0% 100%);
+	background-color: #f7db44;
+}
