@@ -2,7 +2,7 @@
 .partners {
 	height: 550px;
 	padding-top: 2.1em;
-	padding-bottom: 2.5em;
+	// padding-bottom: 2.5em;
 	background-color: #f7de37;
 	background: url(../img/section4/partners.png);
 	background-position: 0 0;
@@ -11,6 +11,10 @@
 	background-size: cover;
 	position: relative;
 	font-size: 32px;
+
+	@media(max-width:1439px) {
+		height: 515px;
+	}
 
 	.container {
 		position: relative;
@@ -48,6 +52,10 @@
 	.page-button.page-button--light {
 		background-color: #fff;
 		box-shadow: 0px 5px 0px 0px #555;
+
+		@media(max-width: 1161px) {
+			margin-bottom: 20px;
+		}
 	}
 
 	.button-link {
@@ -104,6 +112,24 @@
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	@media(max-width: 1439px) {
+		width: calc(360px * 0.9);
+		height: calc(140px * 0.9);
+	}
+
+	@media(max-width: 1199px) {
+
+		&:first-child,
+		&:nth-child(2),
+		&:nth-child(3) {
+			transform: translateX(0%);
+		}
+
+		&:first-child {
+			margin-right: 0;
+		}
 	}
 }
 
