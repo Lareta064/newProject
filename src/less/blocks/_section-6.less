@@ -1,4 +1,33 @@
 /*Секция-6 Карточки товаров*/
+#products {
+	padding-top: 60px;
+}
+
+.products-page {
+	display: none;
+}
+
+.products-page.active {
+	display: flex;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+}
+
+.pagination-item {
+	margin-right: 20px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.pagination-item.active {
+	color: red;
+}
+
 .product-card {
 	max-width: 270px;
 	border-radius: 5px;
@@ -6,6 +35,9 @@
 	box-shadow: 0px 21px 16px 0px rgba(183, 183, 183, 0.22);
 	height: 520px;
 	overflow: hidden;
+	margin-bottom: 45px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .product-card__img {
@@ -17,13 +49,14 @@
 }
 
 .product-card__body {
-	padding: 30px 14px 20px;
+	padding: 30px 20px 20px;
 }
 
 .product-card__title {
 	font-size: 19.5px;
 	height: 55px;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 .product-card__price {
@@ -46,6 +79,7 @@
 	.old-price {
 		text-decoration: line-through;
 		color: #a2a2a2;
+		margin-top: 6px;
 	}
 
 
@@ -68,6 +102,7 @@
 .product-card__footer {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 
 	.card-button {
 		border-radius: 5px;
@@ -90,10 +125,11 @@
 		font-size: 26px;
 		cursor: pointer;
 		transition: .5s;
+
 	}
 
 	.favor-icon.active {
-		color: tomato;
+		color: #e93c00;
 
 	}
 }

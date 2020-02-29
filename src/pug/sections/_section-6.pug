@@ -1,70 +1,87 @@
 //-зведочка для рейтинга
-mixin productCard()
+mixin productCard(imgSrc,price, title, ratingStars, sale,voiceCount,ratingValue, oldPrice)
 	.product-card
-		.product-card__img(style="background-image: url(../img/section6/product.jpg")
+		.product-card__img(style="background-image: url(../img/section6/"+imgSrc+".jpg")
 		.product-card__body
-			p.product-card__title Растение комнатное искуственное, 13 см.
+			p.product-card__title !{title}
 			.product-card__price
-				span.price-value 1960 руб.
-				span.sale-value -20%
-				p.old-price 2500 руб.
+				span.price-value #{price} руб.
+				if(sale)
+					span.sale-value -#{sale}%
+				if(oldPrice)
+					p.old-price #{oldPrice} руб.
 			.product-card__rating
-				span 8 голосов
+				span #{voiceCount}
 				span.rating-stars
-					i.fas.fa-star
-					i.fas.fa-star
-					i.fas.fa-star
-					i.fas.fa-star-half-alt
-					i.far.fa-star
-				span 4.5/5
+					each star in ratingStars
+						i(class=" " + star)
+				span #{ratingValue}
 			.product-card__footer
 				button.card-button В корзину
 				span.favor-icon
 					i.fas.fa-heart
 	
 //Секция-6 Карточки товаров
-section.products
+section.products#products
 	.container
 		.products-cards-inner
-			.product-card
-				.product-card__img(style="background-image: url(../img/section6/product.jpg")
-				.product-card__body
-					p.product-card__title Растение комнатное искуственное, 13 см.
-					.product-card__price
-						span.price-value 1960 руб.
-						span.sale-value -20%
-						p.old-price 2500 руб.
-					.product-card__rating
-						span 8 голосов
-						span.rating-stars
-							i.fas.fa-star
-							i.fas.fa-star
-							i.fas.fa-star
-							i.fas.fa-star-half-alt
-							i.far.fa-star
-						span 4.5/5
-					.product-card__footer
-						button.card-button В корзину
-						span.favor-icon
-							i.fas.fa-heart
-			.product-card
-				.product-card__img(style="background-image: url(../img/section6/product.jpg")
-				.product-card__body
-					p.product-card__title Растение комнатное искуственное, 13 см.
-					.product-card__price
-						span.price-value 1960 руб.
-						span.sale-value -20%
-						p.old-price 2500 руб.
-					.product-card__rating
-						span 8 голосов
-						span.rating-stars
-							i.fas.fa-star
-							i.fas.fa-star
-							i.fas.fa-star
-							i.fas.fa-star-half-alt
-							i.far.fa-star
-						span 4.5/5
-					.product-card__footer
-						button.card-button В корзину
-						span.favor-icon
-							i.fas.fa-heart
+			//карточки для 1 кнопки пагинации
+			.row.products-page.active(data-index="1")
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 2500, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star'], '-20','8 голосов', '3.5/5', 2500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 2650, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','far fa-star'], '','12 голосов', '4/5')
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 3150, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt'], '-20','15 голосов', '4.5/5', 4500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 2999, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star','far fa-star'], '-20','12 голосов', '2.5/5', 3500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 2500, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star'], '-20','8 голосов', '3.5/5', 2500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 2650, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','far fa-star'], '','12 голосов', '4/5')
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 3150, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt'], '-20','15 голосов', '4.5/5', 4500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 2999, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star','far fa-star'], '-20','12 голосов', '2.5/5', 3500)
+			//карточки для 2 кнопки пагинации	
+			.row.products-page(data-index="2")
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product1', 2500, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star'], '-20','8 голосов', '3.5/5', 2500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product', 2650, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','far fa-star'], '','12 голосов', '4/5')
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product2', 3150, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt'], '-20','15 голосов', '4.5/5', 4500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product3', 2999, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star','far fa-star'], '-20','12 голосов', '2.5/5', 3500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product1', 2500, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star'], '-20','8 голосов', '3.5/5', 2500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product2', 2650, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','far fa-star'], '','12 голосов', '4/5')
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product3', 3150, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt'], '-20','15 голосов', '4.5/5', 4500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product1', 2999, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star','far fa-star'], '-20','12 голосов', '2.5/5', 3500)
+
+			//карточки для 3 кнопки пагинации
+			.row.products-page(data-index="3")
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product4', 2500, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star'], '-20','8 голосов', '3.5/5', 2500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product5', 2650, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','far fa-star'], '','12 голосов', '4/5')
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product6', 3150, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt'], '-20','15 голосов', '4.5/5', 4500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product4', 2999, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star','far fa-star'], '-20','12 голосов', '2.5/5', 3500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product5', 2500, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star'], '-20','8 голосов', '3.5/5', 2500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product6', 2650, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','far fa-star'], '','12 голосов', '4/5')
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product7', 3150, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star','fas fa-star','fas fa-star-half-alt'], '-20','15 голосов', '4.5/5', 4500)
+				.col-sm-6.col-md-4.col-xl-3
+					+productCard('product2', 2999, 'Растение комнатное искуственное, 13 см.', ['fas fa-star','fas fa-star','fas fa-star-half-alt','far fa-star','far fa-star'], '-20','12 голосов', '2.5/5', 3500)
+
+		.pagination
+			a(href="#products").pagination-item(data-toggle="1") 1
+			a(href="#products").pagination-item(data-toggle="2") 2
+			a(href="#products").pagination-item(data-toggle="3") 3
