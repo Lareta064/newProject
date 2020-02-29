@@ -1,0 +1,36 @@
+mixin tariffCard(name, icon, listItem, price )
+	.tariff-card
+		h3.tariff-card__title.text-center #{name}
+		.tariff-card__icon
+			img(src="img/section5/"+ icon+".png", alt="icon")
+		ul.tariff-card__list
+			each item in listItem
+				if(item.className == 'fa-check')
+					li.active-item
+						span
+							i(class="fas  "+item.className)
+						span #{item.title}
+				else
+					li.disable-item
+						span
+							i(class="fas  "+item.className)
+						span #{item.title}
+		p.tariff-card__descrip Краткое описание тарифа, его ограничения или другая важная информация.
+		p.tariff-card__price #{price} р
+		button.tariff-card__btn Выбрать
+
+//СЕКЦИЯ 5 - Тарифы
+section.tariff
+	.container
+		.block-head.text-center
+			h2.block-title Тарифы или товары
+			p.basic-text Подзаголовок блока преимуществ или другая важная информация.
+		.tariff-inner
+			.row
+				.col-md-6.col-lg-4
+					+tariffCard('Экономный', 'tariff1', [{className:'fa-check', title:'Первое условие тарифа'},{className:'fa-times', title:'Второе условие тарифа'}, {className:'fas fa-times', title:'Третье условие тарифа'},{className:'fas fa-times', title:'Еще одно условие тарифа'} ], 3999 )
+				.col-md-6.col-lg-4
+					+tariffCard('Базовый', 'tariff2', [{className:'fa-check', title:'Первое условие тарифа'},{className:'fa-check', title:'Второе условие тарифа'}, {className:'fa-times', title:'Третье условие тарифа'},{className:'fas fa-times', title:'Еще одно условие тарифа'} ], 1999 )
+				.col-md-6.offset-md-3.offset-lg-0.col-lg-4
+					+tariffCard('Бизнес', 'tariff3', [{className:'fa-check', title:'Первое условие тарифа'},{className:'fa-check', title:'Второе условие тарифа'}, {className:'fa-check', title:'Третье условие тарифа'},{className:'fa-check', title:'Еще одно условие тарифа'} ], 5999 )
+			
