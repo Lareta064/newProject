@@ -28,4 +28,23 @@ $(document).ready(function () {
 			}
 		})
 	}
+
+	/* Отправить с формой Карточки Товара Название Товара и Цену*/
+	const productCard = document.querySelectorAll('.product-card');
+	const productOrderModal = document.querySelector('#modalProductCard')
+	const modalInputProductName = productOrderModal.querySelector('input[name="productName"]');
+	const modalInputProductPrice = productOrderModal.querySelector('input[name="productPrice"]');
+
+	for (let i = 0; i < productCard.length; i++) {
+		productCard[i].addEventListener('click', function (e) {
+			const target = e.target;
+			if (target.tagName == 'BUTTON') {
+				const customProductName = productCard[i].querySelector('.product-card__title').innerText;
+				const customProductPrice = productCard[i].querySelector('.price-value').innerText;
+				modalInputProductName.value = customProductName;
+				modalInputProductPrice.value = customProductPrice;
+			}
+
+		})
+	}
 })
