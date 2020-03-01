@@ -1,0 +1,57 @@
+.footer {
+	padding-top: 2.5em;
+	padding-bottom: 5em;
+	font-size: 24px;
+
+	@media(max-width: 991px) {
+		font-size: 16px;
+	}
+
+	a {
+		color: #000;
+		display: block;
+		padding: 6px;
+		margin-bottom: 6px;
+		position: relative;
+		width: fit-content;
+
+	}
+
+	.footer-link:after {
+		content: '';
+		position: absolute;
+		bottom: 3px;
+		left: 0;
+		width: 0;
+		transition: .5s;
+		height: 1px;
+		background-color: #000;
+	}
+
+	.footer-link:hover:after {
+		width: 100%;
+	}
+
+	.center-menu {
+
+		p,
+		a {
+			padding: 6px;
+		}
+	}
+
+	.footer-contacts {
+		.contacts-item {
+			margin-left: auto;
+			width: fit-content;
+		}
+
+		.contacts-item:last-child {
+			font-size: 18px;
+
+			@media(max-width:991px) {
+				font-size: 12px;
+			}
+		}
+	}
+}

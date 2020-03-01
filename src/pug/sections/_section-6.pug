@@ -1,13 +1,13 @@
 //-зведочка для рейтинга
 mixin productCard(imgSrc,price, title, ratingStars, sale,voiceCount,ratingValue, oldPrice)
 	.product-card
-		.product-card__img(style="background-image: url(../img/section6/"+imgSrc+".jpg")
+		.product-card__img(style="background-image: url(img/section6/"+imgSrc+".jpg")
 		.product-card__body
 			p.product-card__title !{title}
 			.product-card__price
 				span.price-value #{price} руб.
 				if(sale)
-					span.sale-value -#{sale}%
+					span.sale-value #{sale}%
 				if(oldPrice)
 					p.old-price #{oldPrice} руб.
 			.product-card__rating
