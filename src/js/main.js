@@ -31,20 +31,32 @@ $(document).ready(function () {
         overlayBg.classList.remove('active')
         bodyElement.classList.remove('no-scroll')
     })
-    
-      $("form").submit(function() { //Change
+
+    $("form").submit(function () { //Change
         var th = $(this);
         $.ajax({
             type: "POST",
             url: "mailer.php", //Change
             data: th.serialize()
-        }).done(function() {
+        }).done(function () {
             $(th).find('.succes').addClass('active').css('display', 'flex').hide().fadeIn();
-            setTimeout(function() {
+            setTimeout(function () {
                 $(th).find('.succes').removeClass('active').fadeOut();
                 th.trigger("reset");
             }, 3000);
         });
         return false;
     });
+    // Кнопка быстрой прокрутки вверх
+    $('#backTop').hide();
+
+    $(window).scroll(function () {
+
+        if ($(this).scrollTop() > 200) {
+            $('#backTop').fadeIn();
+        } else {
+            $('#backTop').fadeOut();
+        }
+    })
+
 })

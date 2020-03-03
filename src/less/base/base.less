@@ -1,3 +1,4 @@
+/* БАЗОВЫЕ СТИЛИ ДЛЯ ВСЕХ СЕКЦИЙ*/
 @font-face {
 	font-family: 'YandexSansDisplay-Bold';
 	src: url(../fonts/YandexSansDisplay-Bold.ttf);
@@ -336,3 +337,26 @@ input.page-button {
 	}
 
 }
+
+#backTop a {
+	position: fixed;
+	bottom: 45px;
+	right: 40px;
+	color: #ffcc00;
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#backTop a:hover {
+	opacity: .5;
+}
+
+@media(max-width:991px) {
+	#backTop a {
+		position: fixed;
+		bottom: 25px;
+		right: 20px;
+	}
+}
+
+/*КОНЕЦ БАЗОВЫЕ СТИЛИ*/
