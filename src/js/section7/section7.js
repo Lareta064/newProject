@@ -3,8 +3,8 @@ $(document).ready(function () {
 	jQuery(document).ready(function () {
 
 		jQuery(".eTimer").eTimer({
-			etType: 3,
-			etDate: "22.01.2020.0.0",
+			etType: 1,
+			etDate: "04.03.2020.0.0",
 			etTitleText: "",
 			etTitleSize: 20,
 			etShowSign: 0,
