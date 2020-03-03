@@ -1,3 +1,4 @@
+/* ШАПКА-1 ЭКРАН*/
 .succes {
 	display: none;
 	position: absolute;
@@ -48,9 +49,7 @@
 	align-items: center;
 }
 
-.basic-text {
-	font-size: 1.2em;
-}
+
 
 .hidden-mobile {
 	display: -webkit-box;
@@ -313,7 +312,6 @@ a.contacts-item:hover {
 	overflow: hidden;
 	font-size: 1.3rem;
 
-
 	.main-content {
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
@@ -491,32 +489,7 @@ a.contacts-item:hover {
 	}
 }
 
-.page-button {
-	position: relative;
-	overflow: hidden;
-	border: 0px;
-	border-radius: 5px;
-	background-color: #ffd102;
-	-webkit-box-shadow: 0px 5px 0px 0px rgba(234, 160, 0, 0.004);
-	box-shadow: 0px 5px 0px 0px rgba(234, 160, 0, 0.004);
-	font-size: 24px;
-	padding-left: 4.1em;
-	padding-right: 4.1em;
-	text-align: center;
-	height: 54px;
-	line-height: 1;
-	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-	cursor: pointer;
-	-webkit-transition: .5s;
-	-o-transition: .5s;
-	transition: .5s;
-}
 
-.page-button:hover {
-	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
 
 @keyframes buttonBg {
 	0 {
@@ -528,7 +501,7 @@ a.contacts-item:hover {
 	}
 }
 
-.page-button:before {
+.header-main .page-button:before {
 	content: '';
 	width: 30px;
 	height: 200px;
@@ -724,9 +697,10 @@ a.contacts-item:hover {
 }
 
 .images-item__left {
-	-webkit-transform: translateY(150%);
-	-ms-transform: translateY(150%);
-	transform: translateY(150%);
+	// -webkit-transform: translateY(150%);
+	// -ms-transform: translateY(150%);
+	// transform: translateY(150%);
+	opacity: 0;
 }
 
 .images-item__center {
@@ -734,32 +708,37 @@ a.contacts-item:hover {
 }
 
 .images-item__right {
-	-webkit-transform: translateY(-150%);
-	-ms-transform: translateY(-150%);
-	transform: translateY(-150%);
+	// -webkit-transform: translateY(-150%);
+	// -ms-transform: translateY(-150%);
+	// transform: translateY(-150%);
+	opacity: 0;
 }
 
 @-webkit-keyframes showImgTop {
 	0 {
-		-webkit-transform: translateY(150%);
-		transform: translateY(150%);
+		// -webkit-transform: translateY(150%);
+		// transform: translateY(150%);
+		opacity: 0;
 	}
 
 	100% {
-		-webkit-transform: translateY(0%);
-		transform: translateY(0%);
+		// -webkit-transform: translateY(0%);
+		// transform: translateY(0%);
+		opacity: 1;
 	}
 }
 
 @keyframes showImgTop {
 	0 {
-		-webkit-transform: translateY(150%);
-		transform: translateY(150%);
+		// -webkit-transform: translateY(150%);
+		// transform: translateY(150%);
+		opacity: 0;
 	}
 
 	100% {
-		-webkit-transform: translateY(0%);
-		transform: translateY(0%);
+		// -webkit-transform: translateY(0%);
+		// transform: translateY(0%);
+		opacity: 1;
 	}
 }
 
@@ -785,25 +764,25 @@ a.contacts-item:hover {
 
 @-webkit-keyframes showImgBottom {
 	0 {
-		-webkit-transform: translateY(150%);
-		transform: translateY(150%);
+		// 
+		opacity: 0;
 	}
 
 	100% {
-		-webkit-transform: translateY(0%);
-		transform: translateY(0%);
+		// 
+		opacity: 1;
 	}
 }
 
 @keyframes showImgBottom {
 	0 {
-		-webkit-transform: translateY(150%);
-		transform: translateY(150%);
+		// 
+		opacity: 0;
 	}
 
 	100% {
-		-webkit-transform: translateY(0%);
-		transform: translateY(0%);
+		// 
+		opacity: 1;
 	}
 }
 
@@ -813,6 +792,7 @@ a.contacts-item:hover {
 	-webkit-animation-delay: 0.5s;
 	animation-delay: 0.5s;
 	-webkit-animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
 	animation-duration: 1.5s;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
@@ -821,10 +801,10 @@ a.contacts-item:hover {
 .images-item__center {
 	-webkit-animation-name: showImgCenter;
 	animation-name: showImgCenter;
-	-webkit-animation-delay: 0.5s;
-	animation-delay: 0.5s;
-	-webkit-animation-duration: 3s;
-	animation-duration: 3s;
+	-webkit-animation-delay: 0.8s;
+	animation-delay: 0.8s;
+	-webkit-animation-duration: 1.5s;
+	animation-duration: 1.5s;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
@@ -832,8 +812,9 @@ a.contacts-item:hover {
 .images-item__right {
 	-webkit-animation-name: showImgTop;
 	animation-name: showImgTop;
-	-webkit-animation-delay: 1s;
-	animation-delay: 1s;
+	-webkit-animation-delay: 1.3s;
+	animation-delay: 1.3s;
+	-webkit-animation-duration: 1.5s;
 	-webkit-animation-duration: 1.5s;
 	animation-duration: 1.5s;
 	-webkit-animation-fill-mode: forwards;
@@ -856,20 +837,6 @@ a.contacts-item:hover {
 	align-self: flex-start;
 }
 
-// .main-mobile-img {
-// 	display: none;
-// }
-
-// @media (max-width: 991px) {
-// 	.main-mobile-img {
-// 		display: block;
-// 		height: 400px;
-
-// 		background-image: url('https://pbs.twimg.com/media/DrI1r1nWwAAad3h.jpg:large');
-// 		background-size: cover;
-// 		background-position: center;
-// 	}
-// }
 
 //-модальное окно
 #overlay {
@@ -1030,3 +997,5 @@ a.contacts-item:hover {
 .politic-link {
 	text-decoration: underline;
 }
+
+/* КОНЕЦ ШАПКА*/

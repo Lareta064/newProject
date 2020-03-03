@@ -1,0 +1,62 @@
+mixin tariffCard(name, icon, listItem, price )
+	.tariff-card
+		h3.tariff-card__title.text-center #{name}
+		.tariff-card__icon
+			img(src="img/section5/"+ icon+".png", alt="icon")
+		ul.tariff-card__list
+			each item in listItem
+				if(item.className == 'fa-check')
+					li.active-item
+						span
+							i(class="fas  "+item.className)
+						span #{item.title}
+				else
+					li.disable-item
+						span
+							i(class="fas  "+item.className)
+						span #{item.title}
+		p.tariff-card__descrip Краткое описание тарифа, его ограничения или другая важная информация.
+		p.tariff-card__price #{price} р
+		button.tariff-card__btn(type="button" data-toggle="modal" data-target="#modalTariffCard") Выбрать
+
+//СЕКЦИЯ 5 - Тарифы
+section.tariff#tariff
+	.container
+		.block-head.text-center
+			h2.block-title Тарифы или товары
+			p.basic-text Подзаголовок блока преимуществ или другая важная информация.
+		.tariff-inner
+			.row
+				.col-md-6.col-lg-4
+					+tariffCard('Экономный', 'tariff1', [{className:'fa-check', title:'Первое условие тарифа'},{className:'fa-times', title:'Второе условие тарифа'}, {className:'fas fa-times', title:'Третье условие тарифа'},{className:'fas fa-times', title:'Еще одно условие тарифа'} ], 3999 )
+				.col-md-6.col-lg-4
+					+tariffCard('Базовый', 'tariff2', [{className:'fa-check', title:'Первое условие тарифа'},{className:'fa-check', title:'Второе условие тарифа'}, {className:'fa-times', title:'Третье условие тарифа'},{className:'fas fa-times', title:'Еще одно условие тарифа'} ], 1999 )
+				.col-md-6.offset-md-3.offset-lg-0.col-lg-4
+					+tariffCard('Бизнес', 'tariff3', [{className:'fa-check', title:'Первое условие тарифа'},{className:'fa-check', title:'Второе условие тарифа'}, {className:'fa-check', title:'Третье условие тарифа'},{className:'fa-check', title:'Еще одно условие тарифа'} ], 5999 )
+
+//модальное окно для Тарифных карточек
+#modalTariffCard.modal.fade(tabindex="-1" role="dialog"  aria-hidden="true")
+	.modal-dialog.modal-dialog-centered(role="document")
+		.modal-content.contact-form--center
+			.modal-header
+				h5.modal-title 
+					span Заявка на тариф
+					span#modalTariffName
+				button.close(type="button" data-dismiss="modal" aria-label="Close")
+					span.modalForm-close(aria-hidden="true") ×
+			.modal-body
+				form#orderProduct.contact-form
+					input(type="hidden" name="tariffName" value="")
+					input(type="hidden" name="tariffPrice" value="")
+					.form-row
+						input(type="text" name="userName" required placeholder="Ваше имя")
+						span.input-name Ваше имя
+					.form-row
+						input(type="text" name="email" required placeholder="Ваше имя")
+						span.input-name Ваша эл. почта
+					.form-row
+						input(type="text" name="userPhone" required placeholder="Ваш телефон")
+						span.input-name Ваш номер телефона
+					.form-btn
+						input.page-button(type="submit" value="Отправить")
+			

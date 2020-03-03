@@ -1,0 +1,141 @@
+/*СЕКЦИЯ 5 - ТАРИФЫ*/
+.tariff {
+	padding-top: 144px;
+	padding-bottom: 20px;
+
+	.block-head {
+		margin-bottom: 145px;
+	}
+
+	@media(max-width:767px) {
+		padding-top: 100px;
+
+		.block-head {
+			margin-bottom: 85px;
+		}
+	}
+}
+
+.tariff-card {
+	max-width: 380px;
+	padding: 35px 55px 45px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid rgb(154, 154, 154);
+	border-radius: 5px;
+	background-color: rgb(247, 247, 247);
+	transition: .6s;
+	margin-bottom: 70px;
+
+	&:hover {
+		transform: translateY(-60px);
+	}
+
+	@media(max-width:1199px) {
+
+		padding: 35px 15px 45px;
+	}
+
+	@media(max-width:991px) {
+
+		padding: 35px 30px 45px;
+	}
+
+	@media(max-width:767px) {
+		margin-left: auto;
+		margin-right: auto;
+		;
+	}
+}
+
+.tariff-card__title {
+	font-size: 32px;
+	font-family: @boldText;
+	position: relative;
+	color: #333536;
+	margin-bottom: 45px;
+}
+
+#modalTariffName {
+	color: red;
+	padding-left: 10px;
+}
+
+.tariff-card__title:before {
+	content: '';
+	position: absolute;
+	width: 71px;
+	height: 2px;
+	left: 50%;
+	bottom: -8px;
+	transform: translateX(-50%);
+	background-color: rgb(53, 52, 52);
+
+}
+
+.tariff-card__icon {
+	margin-bottom: 20px;
+}
+
+.tariff-card__list {
+	margin-bottom: 25px;
+
+	li {
+		font-size: 18px;
+		font-family: @lightText;
+		padding-top: 8px;
+		padding-bottom: 8px;
+
+		span:first-child {
+			width: 18px;
+			display: inline-block;
+			font-size: 16px;
+
+		}
+
+		span:last-child {
+			padding-left: 12px;
+		}
+
+		.fa-check {
+			color: #f1c40f;
+		}
+
+		.fa-times,
+		&.disable-item {
+			color: #b3b3b3;
+		}
+
+	}
+}
+
+.tariff-card__descrip {
+	font-size: 18px;
+	line-height: 1.2;
+	color: #5e5e5e;
+	margin-bottom: 16px;
+}
+
+.tariff-card__price {
+	font-size: 38px;
+	font-family: @boldText;
+	margin-bottom: 27px;
+}
+
+.tariff-card__btn {
+	border-radius: 5px;
+	background-color: rgb(255, 209, 2);
+	height: 51px;
+	width: 100%;
+	border: 0px;
+	font-size: 24px;
+	transition: .5s;
+
+	&:hover {
+		background-color: rgb(246, 185, 1);
+	}
+
+}
+
+/* КОНЕЦ СЕКЦИЯ 5*/
